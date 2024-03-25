@@ -23,4 +23,11 @@ public class Player {
         return this.Hand;
     }
 
+    public void show_Hand(List<Card> Hand){
+
+        Card firstCard = Hand.get(0);
+
+
+    }
+
 }
