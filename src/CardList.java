@@ -1,13 +1,13 @@
 public class CardList {
 
     private String value;
-    private Card cardNext;
+    private CardList cardNext;
 
     public String getValue(){
         return this.value;
     }
 
-    public Card getCardNext(){
+    public CardList getCardNext(){
         return this.cardNext ;
     }
 
@@ -15,7 +15,7 @@ public class CardList {
         this.value=_value;
     }
 
-    public void setCardNext(Card _cardnext){
+    public void setCardNext(CardList _cardnext){
         this.cardNext=_cardnext;
     }
 
