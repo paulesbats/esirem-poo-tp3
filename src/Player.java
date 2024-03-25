@@ -1,6 +1,11 @@
+import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class Player {
     private int amount;
-    private CardList player_CL;
+    private List<Card> Hand;
 
     public Player(int amount, CardList player_CL) {
         this.amount = amount;
@@ -15,16 +20,12 @@ public class Player {
         return this.amount;
     }
 
-    public void setPlayer_CL(CardList newCl){
-        this.player_CL = newCl;
+    public Player() {
+        this.Hand = new ArrayList<>();
     }
 
-    public CardList getPlayer_CL(){
-        return this.player_CL;
+    public List<Card> getHand(){
+        return this.Hand;
     }
-    public void show_hand(){
-
-    }
-
 
 }
