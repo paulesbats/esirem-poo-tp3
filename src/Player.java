@@ -26,6 +26,26 @@ public class Player {
     public void show_Hand(List<Card> Hand){
 
         Card firstCard = Hand.get(0);
+        System.out.println("Voici la carte 1 :\n");
+        switch (firstCard.getType())
+        {
+            case "clubs":
+                System.out.println("Color : CLUBS | "); ;
+                break;
+            case "spades":
+                System.out.println("Color : SPADES | ") ;
+                break;
+            case "diamonds":
+                System.out.println("Color : DIAMONDS | ") ;
+                break;
+            case "hearts":
+                System.out.println("Color : HEARTS | ") ;
+                break;
+        }
+        if(firstCard.getValue() <= 10){
+
+
+        }
 
 
     }
