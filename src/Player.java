@@ -25,6 +25,10 @@ public class Player {
 
     public void show_Hand(List<Card> Hand){
 
+        int i = 0;
+        int size = Hand.size();
+
+
         Card firstCard = Hand.get(0);
         System.out.println("Voici la carte 1 :\n");
         switch (firstCard.getType())
@@ -43,11 +47,14 @@ public class Player {
                 break;
         }
         if(firstCard.getValue() <= 10){
-
-
+            System.out.println("Value = " + firstCard.getValue());
+        } else if (firstCard.getValue() == 11) {
+            System.out.println("Value = JACK" );
+        } else if (firstCard.getValue() == 12) {
+            System.out.println("Value = QUEEN" );
+        } else {
+            System.out.println("Value = KING");
         }
-
-
     }
 
 }
