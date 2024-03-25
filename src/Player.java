@@ -7,9 +7,8 @@ public class Player {
     private int amount;
     private List<Card> Hand;
 
-    public Player(int amount, CardList player_CL) {
-        this.amount = amount;
-        this.player_CL = player_CL;
+    public Player() {
+        this.Hand = new ArrayList<>();
     }
 
     public void setAmount(int a){
@@ -18,10 +17,6 @@ public class Player {
 
     public int getAmount(){
         return this.amount;
-    }
-
-    public Player() {
-        this.Hand = new ArrayList<>();
     }
 
     public List<Card> getHand(){
