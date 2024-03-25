@@ -2,6 +2,11 @@ public class Player {
     private int amount;
     private CardList player_CL;
 
+    public Player(int amount, CardList player_CL) {
+        this.amount = amount;
+        this.player_CL = player_CL;
+    }
+
     public void setAmount(int a){
         this.amount = a;
     }
