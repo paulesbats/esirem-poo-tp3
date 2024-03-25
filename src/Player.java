@@ -24,10 +24,11 @@ public class Player {
     }
 
     public void show_Hand(List<Card> Hand){
-
         Card firstCard = Hand.get(0);
-
-
     }
+    public void addCard(Card newCard) {
+        this.Hand.add(newCard);
+    }
+
 
 }
