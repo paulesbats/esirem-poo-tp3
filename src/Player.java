@@ -82,6 +82,14 @@ public class Player {
         }
     }
 
+    public Card cardDraw(int index){
+
+        Card cardDrawed=Hand.get(index);
+        Hand.remove(index);
+
+        return cardDrawed;
+    }
+
 
     public Card getCardAtIndex(int index) {
         if (index >= 0 && index < this.Hand.size()) {
