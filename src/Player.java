@@ -77,6 +77,14 @@ public class Player {
         }
     }
 
+    public Card cardDraw(int index){
+
+        Card cardDrawed=Hand.get(index);
+        Hand.remove(index);
+
+        return cardDrawed;
+    }
+
 
     public void show_Hand() {
 
