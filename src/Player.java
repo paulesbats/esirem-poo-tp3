@@ -23,10 +23,7 @@ public class Player {
     public List<Card> getHand() {
         return this.Hand;
     }
-  
-     public void show_Hand(List<Card> Hand) {
-        Card firstCard = Hand.get(0);
-    }
+
 
     public void addCardtoHand(Card newCard) {
         this.Hand.add(newCard);
@@ -37,38 +34,38 @@ public class Player {
     }
 
 
-    public void shuffleDeck(){
+    public void shuffleDeck() {
         Collections.shuffle(Hand);
     }
 
-    public void createDeck(){
-       int index=0;
-        String sType="";
+    public void createDeck() {
+        int index = 0;
+        String sType = "";
 
-        for(int type=0;type<4;type++){
+        for (int type = 0; type < 4; type++) {
 
-            switch(type){
+            switch (type) {
 
                 case 0:
-                    sType="hearts";
+                    sType = "hearts";
                     break;
 
                 case 1:
-                    sType="diamonds";
+                    sType = "diamonds";
                     break;
 
                 case 2:
-                    sType="spades";
+                    sType = "spades";
                     break;
 
                 case 3:
-                    sType="clubs";
+                    sType = "clubs";
                     break;
 
                 default:
 
             }
-            for(int value=1;value<14;value++) {
+            for (int value = 1; value < 14; value++) {
 
                 Card newCard = new Card(value, sType);
 
@@ -81,13 +78,13 @@ public class Player {
     }
 
 
-    public void show_Hand(List<Card> Hand){
+    public void show_Hand() {
 
         int i = 0;
         int size = Hand.size();
 
         Card newCard = Hand.get(0);
-        while(newCard!=null){
+        while (newCard != null) {
 
             //Card firstCard = Hand.get(0);
             System.out.println("Voici la carte 1 :\n");
@@ -118,6 +115,7 @@ public class Player {
             i++;
             newCard = Hand.get(i);
         }
+    }
 
     public Card getCardAtIndex(int index) {
         if (index >= 0 && index < this.Hand.size()) {
@@ -126,5 +124,6 @@ public class Player {
             return null;
         }
     }
-
 }
+
+
