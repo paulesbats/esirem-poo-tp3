@@ -87,20 +87,19 @@ public class Player {
         while (newCard != null) {
 
             //Card firstCard = Hand.get(0);
-            System.out.println("Voici la carte 1 :\n");
+            System.out.println("\nVoici la carte " + i + ":");
             switch (newCard.getType()) {
                 case "clubs":
-                    System.out.println("Color : CLUBS | ");
-                    ;
+                    System.out.println("Color : CLUBS  ");
                     break;
                 case "spades":
-                    System.out.println("Color : SPADES | ");
+                    System.out.println("Color : SPADES  ");
                     break;
                 case "diamonds":
-                    System.out.println("Color : DIAMONDS | ");
+                    System.out.println("Color : DIAMONDS  ");
                     break;
                 case "hearts":
-                    System.out.println("Color : HEARTS | ");
+                    System.out.println("Color : HEARTS  ");
                     break;
             }
             if (newCard.getValue() <= 10) {
@@ -113,7 +112,12 @@ public class Player {
                 System.out.println("Value = KING");
             }
             i++;
+
+            if(i == size) {
+                System.exit(0);
+            }
             newCard = Hand.get(i);
+
         }
     }
 
