@@ -24,9 +24,6 @@ public class Player {
         return this.Hand;
     }
 
-    public void show_Hand(List<Card> Hand) {
-        Card firstCard = Hand.get(0);
-    }
 
     public void addCardtoHand(Card newCard) {
         this.Hand.add(newCard);
@@ -37,40 +34,38 @@ public class Player {
     }
 
 
-    public void shuffleDeck(){
+    public void shuffleDeck() {
         Collections.shuffle(Hand);
     }
 
-    public void createDeck(){
+    public void createDeck() {
+        int index = 0;
+        String sType = "";
 
+        for (int type = 0; type < 4; type++) {
 
-        int index=0;
-        String sType="";
-
-        for(int type=0;type<4;type++){
-
-            switch(type){
+            switch (type) {
 
                 case 0:
-                    sType="hearts";
+                    sType = "hearts";
                     break;
 
                 case 1:
-                    sType="diamonds";
+                    sType = "diamonds";
                     break;
 
                 case 2:
-                    sType="spades";
+                    sType = "spades";
                     break;
 
                 case 3:
-                    sType="clubs";
+                    sType = "clubs";
                     break;
 
                 default:
 
             }
-            for(int value=1;value<14;value++) {
+            for (int value = 1; value < 14; value++) {
 
                 Card newCard = new Card(value, sType);
 
@@ -91,6 +86,49 @@ public class Player {
     }
 
 
+    public void show_Hand() {
+
+        int i = 0;
+        int size = Hand.size();
+
+        Card newCard = Hand.get(0);
+        while (newCard != null) {
+
+            //Card firstCard = Hand.get(0);
+            System.out.println("\nVoici la carte " + i + ":");
+            switch (newCard.getType()) {
+                case "clubs":
+                    System.out.println("Color : CLUBS  ");
+                    break;
+                case "spades":
+                    System.out.println("Color : SPADES  ");
+                    break;
+                case "diamonds":
+                    System.out.println("Color : DIAMONDS  ");
+                    break;
+                case "hearts":
+                    System.out.println("Color : HEARTS  ");
+                    break;
+            }
+            if (newCard.getValue() <= 10) {
+                System.out.println("Value = " + newCard.getValue());
+            } else if (newCard.getValue() == 11) {
+                System.out.println("Value = JACK");
+            } else if (newCard.getValue() == 12) {
+                System.out.println("Value = QUEEN");
+            } else {
+                System.out.println("Value = KING");
+            }
+            i++;
+
+            if(i == size) {
+                System.exit(0);
+            }
+            newCard = Hand.get(i);
+
+        }
+    }
+
     public Card getCardAtIndex(int index) {
         if (index >= 0 && index < this.Hand.size()) {
             return this.Hand.get(index);
@@ -98,5 +136,6 @@ public class Player {
             return null;
         }
     }
-
 }
+
+
