@@ -33,4 +33,22 @@ public class Game {
     public int getBet(){
         return this.bet;
     }
+
+    public void winner(Player player, Player bank){
+        /* Points are counted as in the Wikipedia documentation only the blackjack columns and lines are removed*/
+
+        if(player.getPlayerPoint()==bank.getPlayerPoint()){
+            System.out.println("equality");
+        }
+        else if(player.getPlayerPoint()>bank.getPlayerPoint()){
+            System.out.println("Player win the game");
+            player.addPlayerAmount(bet);
+        }
+        else{
+            System.out.println("Bank win the game");
+            player.addPlayerAmount(-(bet));
+        }
+
+    }
+
 }
