@@ -9,6 +9,10 @@ public class Player {
     private List<Card> Hand;
     private int playerPoint;
 
+    public void addPlayerAmount(int _amount){
+        this.amount += _amount;
+    }
+
     public void setPlayerPoint(int a){
         this.playerPoint = a;
     }
@@ -144,6 +148,32 @@ public class Player {
         } else {
             return null;
         }
+    }
+
+    public void CountPoint(){
+
+        int handPoint = 0;
+        Card playerCard = this.Hand.get(0);
+        int cardValue = playerCard.getValue();
+
+        List<Card> playerHand= this.Hand;
+        if( cardValue<=10 ){
+            cardValue = playerCard.getValue();
+        }
+        else{
+            cardValue = 10;
+        }
+
+        for(int i = 0 ; i < playerHand.size() ; i++){
+            if(handPoint <= 21){
+                playerCard = this.Hand.get(0);
+                handPoint = handPoint + cardValue;
+            }
+            else{
+                handPoint = -4 ; // si le joueur bust il prend -4 en valeurs de points
+            }
+        }
+        this.setPlayerPoint(handPoint);
     }
 }
 
