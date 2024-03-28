@@ -153,8 +153,8 @@ public class Player {
 
         for(int i = 0 ; i < playerHand.size() ; i++){
             if(handPoint <= 21){
-                playerCard = this.Hand.get(0);
-                handPoint = handPoint + cardValue;
+                playerCard = this.Hand.get(i);
+                handPoint += handPoint + cardValue;
             }
             else{
                 handPoint = -4 ; // si le joueur bust il prend -4 en valeurs de points
