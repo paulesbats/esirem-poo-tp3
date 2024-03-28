@@ -85,10 +85,10 @@ public class Player {
         }
     }
 
-    public Card cardDraw(int index){
+    public Card cardDraw(){
 
-        Card cardDrawed=Hand.get(index);
-        Hand.remove(index);
+        Card cardDrawed=Hand.getFirst();
+        Hand.removeFirst();
         return cardDrawed;
     }
 
