@@ -97,8 +97,9 @@ public class Player {
 
         int size = Hand.size();
 
-        Card newCard = Hand.get(0);
+
         for(int i=0;i<size;i++){
+            Card newCard = Hand.get(i);
 
             //Card firstCard = Hand.get(0);
             System.out.println("\nVoici la carte " + i + ":");
@@ -125,8 +126,6 @@ public class Player {
             } else {
                 System.out.println("Value = KING");
             }
-
-            newCard = Hand.get(i);
         }
     }
 
