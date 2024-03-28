@@ -1,6 +1,5 @@
 public class Game {
 
-    private int credit;
     private int startingBet;
     private int bet;
 
@@ -32,5 +31,26 @@ public class Game {
 
     public int getBet(){
         return this.bet;
+    }
+
+    public void CountPoint(Player player){
+
+        int handPoint = 0;
+        int i = 0;
+        Card playerCard = player.getCardAtIndex(i);
+
+        while(playerCard != null && handPoint <= 21) {
+            if(handPoint <= 21){
+                handPoint = handPoint + playerCard.getValue();
+                i++;
+                playerCard = player.getCardAtIndex(i);
+            }
+            else{
+                handPoint = -4 ;
+            }
+        }
+
+        ;
+
     }
 }

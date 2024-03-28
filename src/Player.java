@@ -7,6 +7,15 @@ import java.util.Collections;
 public class Player {
     private int amount;
     private List<Card> Hand;
+    private int playerPoint;
+
+    public void setPlayerPoint(int a){
+        this.playerPoint = a;
+    }
+
+    public int getPlayerPoint(){
+        return this.playerPoint;
+    }
 
     public Player() {
         this.Hand = new ArrayList<>();
