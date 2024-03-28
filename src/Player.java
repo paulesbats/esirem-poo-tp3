@@ -24,7 +24,6 @@ public class Player {
         return this.Hand;
     }
 
-
     public void addCardtoHand(Card newCard) {
         this.Hand.add(newCard);
     }
@@ -66,14 +65,10 @@ public class Player {
 
             }
             for (int value = 1; value < 14; value++) {
-
                 Card newCard = new Card(value, sType);
-
                 Hand.add(index, newCard);
-
                 index += 1;
             }
-
         }
     }
 
@@ -81,18 +76,16 @@ public class Player {
 
         Card cardDrawed=Hand.get(index);
         Hand.remove(index);
-
         return cardDrawed;
     }
 
 
-    public void show_Hand() {
+    public void showHand() {
 
-        int i = 0;
         int size = Hand.size();
 
         Card newCard = Hand.get(0);
-        while (newCard != null) {
+        for(int i=0;i<size;i++){
 
             //Card firstCard = Hand.get(0);
             System.out.println("\nVoici la carte " + i + ":");
@@ -119,13 +112,8 @@ public class Player {
             } else {
                 System.out.println("Value = KING");
             }
-            i++;
 
-            if(i == size) {
-                System.exit(0);
-            }
             newCard = Hand.get(i);
-
         }
     }
 

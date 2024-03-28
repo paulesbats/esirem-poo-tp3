@@ -9,6 +9,7 @@ public class Game {
         this.startingBet=_startingBet;
         this.bet=_bet;
     }
+    public Game(){}
 
     public void setCredit(int _credit){
         this.credit=_credit;
@@ -32,5 +33,19 @@ public class Game {
 
     public int getBet(){
         return this.bet;
+    }
+
+    public void firstDraw(Player deck,Player player, Player bank){
+        Card card = deck.cardDraw(0);
+        player.addCardtoHand(card);
+        card = deck.cardDraw(0);
+        bank.addCardtoHand(card);
+        card = deck.cardDraw(0);
+        player.addCardtoHand(card);
+    }
+
+    public void giveaCard(Player deck, Player player){
+        Card card = deck.cardDraw(0);
+        player.addCardtoHand(card);
     }
 }
