@@ -1,25 +1,16 @@
 public class Game {
 
-    private int startingBet;
+
     private int bet;
 
-    public Game(int _startingBet, int _bet){
-        this.startingBet=_startingBet;
+    public Game(int _bet){
         this.bet=_bet;
     }
     public Game(){}
 
 
-    public void setStartingBet(int _startingBet){
-        this.startingBet=_startingBet;
-    }
-
     public void setBet(int _bet){
         this.bet=_bet;
-    }
-
-    public int getStartingBet(){
-        return this.startingBet;
     }
 
     public int getBet(){
@@ -27,16 +18,17 @@ public class Game {
     }
 
     public void firstDraw(Player deck,Player player, Player bank){
-        Card card = deck.cardDraw(0);
+        Card card = deck.cardDraw();
         player.addCardtoHand(card);
-        card = deck.cardDraw(0);
+        card = deck.cardDraw();
         bank.addCardtoHand(card);
-        card = deck.cardDraw(0);
+        card = deck.cardDraw();
         player.addCardtoHand(card);
+
     }
 
     public void giveaCard(Player deck, Player player){
-        Card card = deck.cardDraw(0);
+        Card card = deck.cardDraw();
         player.addCardtoHand(card);
     }
 
@@ -54,6 +46,28 @@ public class Game {
             System.out.println("Bank win the game");
             player.addPlayerAmount(-(bet));
         }
+    }
+
+    public static void round(){
+
+        Game game= new Game(0);
+
+        Player player=new Player();
+        Player bank=new Player();
+        Player deck=new Player();
+
+        player.setAmount(100);
+
+
+        deck.createDeck();
+        deck.shuffleDeck();
+
+        game.firstDraw(deck,player,bank);
+
+        player.showHand();
+        System.out.println("-----------------------------------------------------------");
+        bank.showHand();
+
 
     }
 }
