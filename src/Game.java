@@ -7,6 +7,7 @@ public class Game {
         this.startingBet=_startingBet;
         this.bet=_bet;
     }
+    public Game(){}
 
 
     public void setStartingBet(int _startingBet){
@@ -25,6 +26,20 @@ public class Game {
         return this.bet;
     }
 
+    public void firstDraw(Player deck,Player player, Player bank){
+        Card card = deck.cardDraw(0);
+        player.addCardtoHand(card);
+        card = deck.cardDraw(0);
+        bank.addCardtoHand(card);
+        card = deck.cardDraw(0);
+        player.addCardtoHand(card);
+    }
+
+    public void giveaCard(Player deck, Player player){
+        Card card = deck.cardDraw(0);
+        player.addCardtoHand(card);
+    }
+
     public void winner(Player player, Player bank){
         /* Points are counted as in the Wikipedia documentation only the blackjack columns and lines are removed*/
 
@@ -41,7 +56,6 @@ public class Game {
         }
 
     }
-
 }
 
 

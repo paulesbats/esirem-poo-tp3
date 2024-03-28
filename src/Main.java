@@ -1,17 +1,28 @@
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.print("Hello and welcome!");
+        System.out.print("Game Start\n");
 
-        /*  test cardDraw
-        Player deck=new Player();
-
+        Game game = new Game();
+        Player deck = new Player();
+        Player player = new Player();
+        Player bank = new Player();
         deck.createDeck();
-        System.out.println(deck.cardDraw(2).getValue());
-        deck.show_Hand();
+        deck.shuffleDeck();
 
-        */
+        game.firstDraw(deck,player,bank);
+
+        deck.showHand();
+        System.out.print("////////////\n");
+        player.showHand();
+        System.out.print("////////////\n");
+        bank.showHand();
+
+        game.giveaCard(deck,player);
+        System.out.print("////////////\n");
+        player.showHand();
+        System.out.print("////////////\n");
+        game.giveaCard(deck,bank);
+        bank.showHand();
 
     }
 }
