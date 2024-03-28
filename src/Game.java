@@ -1,19 +1,14 @@
 public class Game {
 
-    private int credit;
     private int startingBet;
     private int bet;
     private boolean insurance;
 
-    public Game(int _credit, int _startingBet, int _bet){
-        this.credit=_credit;
+    public Game(int _startingBet, int _bet){
         this.startingBet=_startingBet;
         this.bet=_bet;
     }
 
-    public void setCredit(int _credit){
-        this.credit=_credit;
-    }
 
     public void setStartingBet(int _startingBet){
         this.startingBet=_startingBet;
@@ -25,10 +20,6 @@ public class Game {
 
     public void setInsurance(boolean _insurance){
         this.insurance=_insurance;
-    }
-
-    public int getCredit(){
-        return this.credit;
     }
 
     public int getStartingBet(){
@@ -75,3 +66,5 @@ public class Game {
     }
 
 }
+
+
